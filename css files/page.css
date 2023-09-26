@@ -1,0 +1,116 @@
+
+* {
+    font-family: "Avenir Next Cyr", Arial, sans-serif;
+    text-align: center;
+    font-weight: normal;
+}
+
+body {
+    background-color: #0095B6;
+}
+
+
+header {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    color: white;
+    background-color: #000720;
+    left: 0;
+    font-size: 0.6em;
+    top: 0;
+}
+
+thead * {margin-top: 4%}
+
+tfoot * {margin-bottom: 4% !important} 
+
+#mainTable {
+    background-color: ghostwhite;
+    width: 75%;
+    margin: 80px auto;
+}
+
+input {
+    width: 100%;
+    border: 2px solid #2E8B57;
+    border-radius: 20px;
+    background-color: white;
+}
+
+
+input {cursor: pointer}
+
+figure img {
+    width: 47px;
+    height: 55px;
+}
+
+figcaption {font-size: 0.8em}
+
+#credit > img {
+    width: 40px;
+    height: 40px;
+}
+
+#credit > a {
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.shaded {box-shadow: 0 0 10px 1px black}
+
+.shaded:hover {box-shadow: 0 0 20px 2px black}
+
+
+hr {
+    color: #2E8B57;
+    width: 95%;
+}
+
+.notification {
+    color: white;
+    padding: 1%;
+}
+
+.outputStub {background-color: #000720}
+
+.errorStub {
+    background-color: #2E8B57}
+
+#outputTable {
+    border: 1px solid #000720;
+    border-collapse: collapse;
+    margin: auto;
+    width: 90%;
+}
+
+#outputTable th {
+    background-color: #000720;
+    color: white;
+}
+
+#outputTable * {
+    padding: 25px;
+}
+
+.result{
+    border-collapse: separate;
+    border-spacing: 135px 0;
+    width: 100%;
+    border: 2px solid #2E8B57;
+    border-radius: 20px;
+}
+
+#final{
+    text-transform: uppercase;
+}
+
+.result1{
+    border-collapse: separate;
+    border-spacing: 70px 0;
+    width: 100%;
+    border: 2px solid #2E8B57;
+    border-radius: 20px;
+}
