@@ -4,15 +4,15 @@ session_start();
 if (!isset($_SESSION["tableRows"])) $_SESSION["tableRows"] = array();
 date_default_timezone_set("Europe/Moscow");
 $x = (float) $_POST["x"];
-$y = (float) $_POST["y"];
+$stringY = (string) $_POST["y"];
+$y = truncateNumber($stringY);
 $r = (float) $_POST["r"];
 if ($x == 0 && $y == 0 && $r == 0){
 
 }
 if (checkData($x, $y, $r)) {
-    $y = round($y,2);
     $coordsStatus = checkCoordinates($x, $y, $r);
-    $currentTime = date("H : i : s");
+    $currentTime = date("H:i:s");
     $benchmarkTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
     $benchmarkTime = round($benchmarkTime,7);
     array_push($_SESSION["tableRows"], 
@@ -39,7 +39,16 @@ function checkData($x, $y, $r) {
 function checkCoordinates($x, $y, $r) {
     if (((abs($x) + abs($y) <= $r) && ($x <= 0) && ($y <= 0)) ||
         (($x >= -$r) && ($y <= $r) && ($x <= 0) && ($y >= 0)) ||
-        (($x**2 + $y**2) <= ($r**2) && ($x >= 0) && ($y >= 0))) return "да";
-    else return "нет";
+        (($x**2 + $y**2) <= ($r**2) && ($x >= 0) && ($y >= 0))) return "попадание";
+    else return "промах";
+}
+
+function truncateNumber($number){
+    $parts = explode('.', $number);
+    if(count($parts) > 1 && strlen($parts[1]) > 15){
+        $parts[1] = substr($parts[1], 0, 14);
+        $number = implode('.', $parts);
+    }
+    return $number;
 }
 ?>

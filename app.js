@@ -21,8 +21,8 @@ window.onload = function () {
 
 function saveTableToLocalStorage(){
     const records = document.querySelectorAll("#tablebody tr");
-    const last10Records = Array.from(records).slice(-10); 
-    const recordsHTML = last10Records.map(record => record.outerHTML).join("");
+    const last7Records = Array.from(records).slice(-7); 
+    const recordsHTML = last7Records.map(record => record.outerHTML).join("");
     localStorage.setItem("table",recordsHTML);
 }
 
@@ -98,6 +98,20 @@ function validateR(){
     else{
         createNotification("r не выбран");
         return false;
+    }
+}
+
+document.getElementById("clearButton").onclick = function () {
+    clearTableAndLocalStorage();
+};
+
+function clearTableAndLocalStorage() {
+    document.getElementById("tablebody").innerHTML = "";
+    localStorage.removeItem("table");
+    
+    let notificationElement = document.querySelector(".notification");
+    if (notificationElement) {
+        notificationElement.remove();
     }
 }
 

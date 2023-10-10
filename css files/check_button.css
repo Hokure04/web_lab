@@ -1,4 +1,4 @@
-#checkButton {
+#checkButton, .clear {
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
@@ -15,8 +15,7 @@
     border-radius: 4px;
 }
 
-
-#checkButton::after {
+#checkButton::after, .clear::after {
     content: "";
     background: #2E8B57;
     display: block;
@@ -26,14 +25,14 @@
     margin-left: -20px !important;
     margin-top: -120%;
     opacity: 0;
-    transition: all 0.8s
+    transition: all 0.8s;
 }
 
-#checkButton:active::after {
+#checkButton:active::after, .clear:active::after {
     padding: 0;
     margin: 0;
     opacity: 1;
-    transition: 0s
+    transition: 0s;
 }
 
-#checkButton:focus {outline: 0}
+#checkButton:focus, .clear:focus {outline: 0}

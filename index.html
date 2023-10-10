@@ -89,43 +89,27 @@
           <tr>
             <td colspan="5">
               <button id="checkButton">Проверить</button>
+              <button id="clearButton" class="clear">Очистить</button>
               <hr>
             </td>
           </tr>
           <tr>
             <td colspan="5">
               <h3 id="final">Результаты</h3>
-              <table class="result1">
-                <tr>
-                  <th>X</th>
-                  <th></th>
-                  <th>Y</th>
-                  <th></th>
-                  <th>R</th>
-                  <th>Входит ли точка в ОДЗ</th>
-                  <th>Текущее время</th>
-                  <th>Время скрипта</th>
-                </tr>
-                <?php
-                  sessin_start();
-                  foreach($_SESSION["tableRows"] as $tableRow) echo $tableRow;
-                ?>
-              </table>
               <tr></tr>
               <td colspan="5">
-                <table id="tablebody" class="result">
-                  <tr>
-                    <th>X</th>
-                    <th>Y</th>
-                    <th>R</th>
-                    <th>Входит ли точка в ОДЗ</th>
-                    <th>Текущее время</th>
-                    <th>Время скрипта</th>
-                  </tr>
-                  <?php
-                    sessin_start();
-                    foreach($_SESSION["tableRows"] as $tableRow) echo $tableRow;
-                  ?>
+                <table class="result">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Статус</th>
+                            <th>Текущее время</th>
+                            <th>Время скрипта</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody"></tbody>
                 </table>
               </td>
             </td>

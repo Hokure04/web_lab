@@ -23,8 +23,6 @@ header {
 
 thead * {margin-top: 4%}
 
-tfoot * {margin-bottom: 4% !important} 
-
 #mainTable {
     background-color: ghostwhite;
     width: 75%;
@@ -94,6 +92,7 @@ hr {
 #outputTable * {
     padding: 25px;
 }
+
 
 .result{
     border-collapse: separate;
